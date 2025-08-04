@@ -2,20 +2,16 @@
 import {
   HeroSection,
   FeaturesSection,
-  TestimonialsSection,
+  // TestimonialsSection,
   ServicesSection,
   AboutSection,
   FAQSection,
   CTASection,
 } from "@/components/sections";
-import { Header } from "@/components/layout/header";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-      {/* Navigation */}
-      <Header />
-
       {/* Hero Section */}
       <HeroSection />
 
@@ -23,7 +19,7 @@ export default function Home() {
       <FeaturesSection />
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* Portfolio Section */}
       {/* <PortfolioSection /> */}

@@ -1,19 +1,49 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { AccentText } from "@/components/ui/accent-text";
 import { siteConfig } from "@/lib/site-config";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion, useScroll, useTransform, easeInOut } from "framer-motion";
+import { useRef } from "react";
 
 export function ServicesSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 180], {
+    ease: easeInOut,
+  });
+
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-r from-slate-50/50 to-blue-50/50 dark:from-slate-800/50 dark:to-slate-700/50">
+    <section
+      ref={sectionRef}
+      className="relative py-20 lg:py-32 bg-gradient-to-r from-blue-800 to-primary dark:from-slate-800/50 dark:to-slate-700/50"
+    >
+      <motion.div
+        style={{ rotate }}
+        className="absolute top-0 right-0 w-1/2 p-10 opacity-10"
+      >
+        <Image
+          src="/logo_white.svg"
+          alt="Services"
+          width={1000}
+          height={1000}
+          className="w-full h-full"
+        />
+      </motion.div>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold !text-primary-foreground mb-6">
             Naše <AccentText>usluge</AccentText>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted dark:text-muted-foreground max-w-3xl mx-auto">
             Kompletne digitalne kampanje za brendove iz oblasti zdravlja, lepote
             i wellnessa
           </p>
@@ -25,7 +55,7 @@ export function ServicesSection() {
             return (
               <GlassCard
                 key={index}
-                className="p-8 hover:scale-105 transition-all duration-300"
+                className="p-8 hover:scale-105 !bg-background transition-all duration-300"
               >
                 <div className="text-center mb-6">
                   <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-primary rounded-2xl flex items-center justify-center mx-auto mb-4">

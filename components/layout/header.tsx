@@ -7,7 +7,7 @@ export function Header() {
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border-b border-white/20">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-start gap-2">
+        <Link href="/" className="flex items-start gap-2">
           <Image
             src="/logo.svg"
             alt="NovaLume"
@@ -30,7 +30,7 @@ export function Header() {
           >
             novalume
           </div>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           <Link href="/ponuda" className="hover:text-primary transition-colors">

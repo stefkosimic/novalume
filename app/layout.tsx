@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Kroz autentičan sadržaj i pažljivo brane brendove, stvaramo inspiraciju koja pokreće zajednicu",
   icons: {
-    icon: "/logo_2.svg",
+    icon: "/logo.svg",
   },
 };
 
@@ -27,13 +28,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sr" suppressHydrationWarning>
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className={`${geistSans.variable} antialiased overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
           <Footer />
         </ThemeProvider>

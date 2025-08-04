@@ -1,6 +1,8 @@
+"use client";
+
 import { GlassCard } from "@/components/ui/glass-card";
 import { AccentText } from "@/components/ui/accent-text";
-import Image from "next/image";
+import { motion, easeOut } from "framer-motion";
 
 // FAQ data
 const faqItems = [
@@ -27,54 +29,122 @@ const faqItems = [
 ];
 
 export function FAQSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: easeOut,
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: {
+      opacity: 0,
+      y: -20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: easeOut,
+      },
+    },
+  };
+
+  const numberVariants = {
+    hidden: { scale: 0, rotate: -180 },
+    visible: {
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 0.4,
+        ease: easeOut,
+      },
+    },
+  };
+
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-r from-slate-50/50 to-blue-50/50 dark:from-slate-800/50 dark:to-slate-700/50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Česta <AccentText>pitanja</AccentText>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Odgovori na najčešća pitanja o našoj saradnji
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="lg:col-span-2">
-            <div className="grid md:grid-cols-2 gap-8">
-              {faqItems.map((item, index) => (
-                <GlassCard key={index} className="p-8">
+        <motion.div
+          className="grid max-w-6xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <div className="grid md:grid-cols-2 gap-8">
+            {faqItems.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 },
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <GlassCard className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-primary rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <motion.div
+                      className="w-8 h-8 bg-gradient-to-r from-blue-500 to-primary rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
+                      variants={numberVariants}
+                      whileHover={{
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.2 },
+                      }}
+                    >
                       <span className="text-white font-semibold text-sm">
                         {index + 1}
                       </span>
-                    </div>
+                    </motion.div>
                     <div>
                       <h3 className="font-semibold mb-3">{item.question}</h3>
                       <p className="text-muted-foreground">{item.answer}</p>
                     </div>
                   </div>
                 </GlassCard>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-
-          {/* FAQ Illustration */}
-          <div className="relative">
-            <div className="relative z-10">
-              <Image
-                src="/illustrations/Asset_21.svg"
-                alt="FAQ Illustration"
-                width={400}
-                height={400}
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-2xl"></div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

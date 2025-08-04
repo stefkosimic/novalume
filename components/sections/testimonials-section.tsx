@@ -16,7 +16,7 @@ const testimonials = [
     name: "Marko Jovanović",
     role: "CEO, WellnessCo",
     content:
-      "Autentičnost i profesionalnost na najvišem nivou. Preporučujem svima koji traže kvalitetnu saradnju.",
+      "Saradnja sa NovaLume je bila odlična investicija. Njihov pristup i rezultati su nadmašili očekivanja.",
     rating: 5,
     image: "/api/placeholder/60/60",
   },
@@ -39,7 +39,7 @@ export function TestimonialsSection() {
             Šta kažu <AccentText>klijenti</AccentText>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Autentična iskustva i rezultati koji govore sami za sebe
+            Proverena iskustva i merljivi rezultati naših zadovoljnih klijenata
           </p>
         </div>
 

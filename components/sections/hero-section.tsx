@@ -69,11 +69,9 @@ export function HeroSection() {
               Digitalni medijski portal
             </Badge>
 
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-16">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-12 lg:leading-16">
               <AccentText>Osvetlimo najbolje</AccentText>
-              <br />
-              iz sveta zdravlja, lepote, mode
-              <br />i pametnog života
+              <br /> iz sveta zdravlja, lepote i mode
             </h1>
 
             <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
@@ -116,7 +114,7 @@ export function HeroSection() {
           </div>
 
           {/* Hero Illustration */}
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="relative z-10 p-20">
               <Image
                 src="/logo.svg"
