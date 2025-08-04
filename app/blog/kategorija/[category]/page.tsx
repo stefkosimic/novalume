@@ -79,8 +79,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 Nema članaka u ovoj kategoriji
               </h2>
               <p className="text-muted-foreground mb-8">
-                Trenutno nema objavljenih članaka u kategoriji "{category.name}
-                ".
+                Trenutno nema objavljenih članaka u kategoriji &quot;
+                {category.name}&quot;.
               </p>
               <Link href="/blog">
                 <Button>Vratite se na blog</Button>
