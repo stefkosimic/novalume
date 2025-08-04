@@ -9,13 +9,7 @@ import Image from "next/image";
 import { Calendar, Clock, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
 import { notFound } from "next/navigation";
 
-interface CategoryPageProps {
-  params: {
-    category: string;
-  };
-}
-
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage({ params }: { params: any }) {
   const category = blogCategories.find((cat) => cat.id === params.category);
 
   if (!category) {
