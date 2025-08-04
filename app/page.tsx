@@ -130,11 +130,29 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border-b border-white/20">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <Image src="/logo_1.svg" alt="NovaLume" width={35} height={35} />
-            <span className="text-2xl font-bold leading-6 text-primary">
+          <div className="flex items-start gap-2">
+            <Image
+              src="/logo.svg"
+              alt="NovaLume"
+              width={24}
+              height={24}
+              className="dark:hidden"
+            />
+            <Image
+              src="/logo_white.svg"
+              alt="NovaLume"
+              width={24}
+              height={24}
+              className="dark:block hidden"
+            />
+            <div
+              style={{
+                lineHeight: 1,
+              }}
+              className="text-xl h-full align-middle font-bold text-primary"
+            >
               novalume
-            </span>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
