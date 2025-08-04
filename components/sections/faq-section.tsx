@@ -45,7 +45,7 @@ export function FAQSection() {
               {faqItems.map((item, index) => (
                 <GlassCard key={index} className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-primary rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-white font-semibold text-sm">
                         {index + 1}
                       </span>

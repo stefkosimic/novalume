@@ -22,7 +22,7 @@ export function CTASection() {
               <Link href="/naruci">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 text-lg px-8 py-6"
+                  className="bg-gradient-to-r from-blue-600 to-primary hover:from-blue-700 hover:to-primary text-white border-0 text-lg px-8 py-6"
                 >
                   Započni saradnju
                   <ArrowRight className="ml-2 w-5 h-5" />

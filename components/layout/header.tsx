@@ -50,7 +50,10 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <Link href="/naruci">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0">
+            <Button
+              variant="default"
+              className="bg-gradient-to-r from-blue-600 to-primary text-white border-0"
+            >
               Započni saradnju
             </Button>
           </Link>

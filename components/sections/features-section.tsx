@@ -17,18 +17,21 @@ export function FeaturesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {siteConfig.features.map((feature, index) => (
-            <GlassCard
-              key={index}
-              className="p-8 text-center hover:scale-105 transition-transform duration-300"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </GlassCard>
-          ))}
+          {siteConfig.features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <GlassCard
+                key={index}
+                className="p-8 text-center hover:scale-105 transition-transform duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <IconComponent className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </GlassCard>
+            );
+          })}
         </div>
       </div>
     </section>

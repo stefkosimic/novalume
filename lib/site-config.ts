@@ -1,3 +1,5 @@
+import { Sparkles, Star, Search, Handshake, Smartphone, Link, Palette } from "lucide-react";
+
 export const siteName = "NovaLume";
 
 export const siteConfig = {
@@ -20,22 +22,22 @@ export const siteConfig = {
     {
       title: "Autentičnost",
       description: "Svaka preporuka je pažljivo odabrana i testirana",
-      icon: "✨",
+      icon: Sparkles,
     },
     {
       title: "Kvalitet",
       description: "Sarađujemo samo sa brendovima u koje verujemo",
-      icon: "🌟",
+      icon: Star,
     },
     {
       title: "Transparentnost",
       description: "Svaka sponzorisana objava je jasno označena",
-      icon: "🔍",
+      icon: Search,
     },
     {
       title: "Zajednica",
       description: "Gradimo poverenje sa publikom, ne brojke",
-      icon: "🤝",
+      icon: Handshake,
     },
   ],
   services: [
@@ -44,7 +46,7 @@ export const siteConfig = {
       name: "Instagram kampanje",
       price: "Od 50€",
       description: "Story, reels i post promocije",
-      icon: "📱",
+      icon: Smartphone,
       features: [
         "Story promocije",
         "Reels sadržaj",
@@ -57,7 +59,7 @@ export const siteConfig = {
       name: "Affiliate promocije",
       price: "Od 30€",
       description: "Direktni linkovi i kodovi",
-      icon: "🔗",
+      icon: Link,
       features: [
         "Direktni linkovi",
         "Affiliate kodovi",
@@ -70,7 +72,7 @@ export const siteConfig = {
       name: "Custom sadržaj",
       price: "Po dogovoru",
       description: "AI-generisani video, carousel, tekstovi",
-      icon: "🎨",
+      icon: Palette,
       features: [
         "AI video sadržaj",
         "Carousel dizajn",

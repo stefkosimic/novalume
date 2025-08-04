@@ -5,11 +5,11 @@ import { AccentText } from "@/components/ui/accent-text";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Play } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-32">
+    <section className="relative overflow-hidden py-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl"></div>
@@ -64,12 +64,12 @@ export function HeroSection() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <Badge className="mb-6 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30">
+            <Badge className="mb-6 bg-gradient-to-r from-blue-500/20 to-primary/20 text-blue-700 dark:text-blue-300 border-blue-500/30">
               <Sparkles className="w-4 h-4 mr-2" />
               Digitalni medijski portal
             </Badge>
 
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-16">
               <AccentText>Osvetlimo najbolje</AccentText>
               <br />
               iz sveta zdravlja, lepote, mode
@@ -85,20 +85,21 @@ export function HeroSection() {
               <Link href="/naruci">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 text-lg px-8 py-6"
+                  variant="default"
+                  className="bg-gradient-to-r from-blue-600 to-primary text-white border-0 text-lg px-8 py-6"
                 >
                   Započni saradnju
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-6 border-2"
               >
                 <Play className="mr-2 w-5 h-5" />
                 Pogledaj portfolio
-              </Button>
+              </Button> */}
             </div>
 
             {/* Stats */}
