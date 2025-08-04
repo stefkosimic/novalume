@@ -38,7 +38,7 @@ export function Header() {
             }}
             className="text-xl h-full align-middle font-bold text-primary"
           >
-            navolume
+            novalume
           </div>
         </Link>
 
@@ -142,7 +142,7 @@ export function Header() {
                       className="dark:block hidden"
                     />
                     <span className="text-xl font-bold text-primary">
-                      navolume
+                      novalume
                     </span>
                   </div>
                 </SheetTitle>

@@ -28,7 +28,7 @@ export function Footer() {
               }}
               className="text-xl h-full align-middle font-bold text-primary"
             >
-              navolume
+              novalume
             </div>
           </div>
 
