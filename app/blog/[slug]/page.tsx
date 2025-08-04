@@ -17,13 +17,7 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: { params: any }) {
   const post = blogPosts.find((p) => p.id === params.slug);
 
   if (!post) {
